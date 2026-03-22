@@ -1,5 +1,6 @@
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
+import CombatGallery from "@/components/landing/CombatGallery";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Features from "@/components/landing/Features";
 import DisciplinesSection from "@/components/landing/Disciplines";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <CombatGallery />
         <HowItWorks />
         <Features />
         <DisciplinesSection />

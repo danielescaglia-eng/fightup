@@ -78,23 +78,23 @@ export const TIER_CONFIG: Record<
   Crown: { color: "#F5A623", label: "King/Queen", eloRange: "2000+" },
 };
 
-// Realistic fighter portraits via randomuser.me
+// Fighter portraits — combat sports athletes from Unsplash
 const portraits: Record<string, string> = {
-  marco: "https://randomuser.me/api/portraits/men/32.jpg",
-  yuki: "https://randomuser.me/api/portraits/men/11.jpg",
-  sofia: "https://randomuser.me/api/portraits/women/44.jpg",
-  dmitri: "https://randomuser.me/api/portraits/men/45.jpg",
-  liam: "https://randomuser.me/api/portraits/men/22.jpg",
-  aisha: "https://randomuser.me/api/portraits/women/68.jpg",
-  lucas: "https://randomuser.me/api/portraits/men/67.jpg",
-  soojin: "https://randomuser.me/api/portraits/women/29.jpg",
-  ahmed: "https://randomuser.me/api/portraits/men/53.jpg",
-  emma: "https://randomuser.me/api/portraits/women/17.jpg",
-  takeshi: "https://randomuser.me/api/portraits/men/91.jpg",
-  ryu: "https://randomuser.me/api/portraits/men/18.jpg",
+  marco: "https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?w=200&h=200&fit=crop&crop=face",
+  yuki: "https://images.unsplash.com/photo-1615117972428-28de67cda58c?w=200&h=200&fit=crop&crop=face",
+  sofia: "https://images.unsplash.com/photo-1567598508481-65985588e295?w=200&h=200&fit=crop&crop=face",
+  dmitri: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=200&h=200&fit=crop&crop=face",
+  liam: "https://images.unsplash.com/photo-1549476464-37392f717541?w=200&h=200&fit=crop&crop=face",
+  aisha: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=200&h=200&fit=crop&crop=face",
+  lucas: "https://images.unsplash.com/photo-1521804906057-1df8fdb718b7?w=200&h=200&fit=crop&crop=face",
+  soojin: "https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?w=200&h=200&fit=crop&crop=face",
+  ahmed: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=200&h=200&fit=crop&crop=face",
+  emma: "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=200&h=200&fit=crop&crop=face",
+  takeshi: "https://images.unsplash.com/photo-1564415637254-92c66292cd64?w=200&h=200&fit=crop&crop=face",
+  ryu: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=200&h=200&fit=crop&crop=face",
 };
 
-const avatarUrl = (seed: string) => portraits[seed] || `https://randomuser.me/api/portraits/men/1.jpg`;
+const avatarUrl = (seed: string) => portraits[seed] || "https://images.unsplash.com/photo-1549476464-37392f717541?w=200&h=200&fit=crop&crop=face";
 
 export const FIGHTERS: Fighter[] = [
   {

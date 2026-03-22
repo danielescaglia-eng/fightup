@@ -3,57 +3,30 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+const heroImages = [
+  "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&q=80",
+  "https://images.unsplash.com/photo-1517438322307-e67111335449?w=400&q=80",
+  "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=400&q=80",
+  "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400&q=80",
+];
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background fighter image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1920&q=80')",
         }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0F]/85 via-[#0A0A0F]/75 to-[#0A0A0F]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0F]/80 via-[#0A0A0F]/70 to-[#0A0A0F]" />
       {/* Red accent glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(232,53,42,0.2)_0%,_transparent_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(0,212,255,0.08)_0%,_transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(232,53,42,0.25)_0%,_transparent_70%)]" />
 
-      {/* Floating elements */}
-      <motion.div
-        className="absolute top-20 left-[10%] text-8xl opacity-10 select-none"
-        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      >
-        &#x1F94A;
-      </motion.div>
-      <motion.div
-        className="absolute bottom-32 right-[15%] text-7xl opacity-10 select-none"
-        animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      >
-        &#x1F451;
-      </motion.div>
-      <motion.div
-        className="absolute top-40 right-[20%] text-6xl opacity-10 select-none"
-        animate={{ y: [0, -12, 0] }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2,
-        }}
-      >
-        &#x1F525;
-      </motion.div>
-
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -104,7 +77,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
         >
           <button className="group relative px-8 py-4 bg-primary hover:bg-primary-dark text-white font-bold text-lg rounded-xl transition-all duration-300 pulse-red">
             <span className="relative z-10 flex items-center gap-2">
@@ -119,25 +92,51 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* Stats preview */}
+        {/* Combat sports image strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="flex justify-center gap-3 mb-12"
+        >
+          {heroImages.map((img, i) => (
+            <div
+              key={i}
+              className="w-20 h-20 md:w-28 md:h-28 rounded-2xl overflow-hidden border border-white/10 opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300"
+            >
+              <img
+                src={img}
+                alt="Combat sports"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Discipline badges */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-16 flex justify-center gap-8 md:gap-16"
+          className="flex flex-wrap justify-center gap-2 md:gap-3"
         >
           {[
-            { label: "Discipline", value: "9" },
-            { label: "Categorie di Peso", value: "10" },
-            { label: "Livelli di Rank", value: "7" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-primary">
-                {stat.value}
-              </div>
-              <div className="text-sm text-text-secondary mt-1">
-                {stat.label}
-              </div>
+            { emoji: "\uD83E\uDD4A", name: "Boxe" },
+            { emoji: "\uD83E\uDDB5", name: "Kickboxing" },
+            { emoji: "\uD83D\uDC32", name: "Muay Thai" },
+            { emoji: "\uD83E\uDD3C", name: "MMA" },
+            { emoji: "\uD83D\uDD77\uFE0F", name: "BJJ" },
+            { emoji: "\uD83E\uDD3C", name: "Wrestling" },
+            { emoji: "\uD83E\uDD4B", name: "Karate" },
+            { emoji: "\uD83E\uDD4B", name: "Taekwondo" },
+            { emoji: "\uD83E\uDD4B", name: "Judo" },
+          ].map((d) => (
+            <div
+              key={d.name}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm text-text-secondary hover:text-white hover:border-primary/30 transition-all"
+            >
+              <span>{d.emoji}</span>
+              <span className="text-xs font-medium">{d.name}</span>
             </div>
           ))}
         </motion.div>
