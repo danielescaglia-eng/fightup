@@ -13,7 +13,7 @@ export default function RankingsScreen() {
   const [discipline, setDiscipline] = useState<Discipline>("Boxing");
 
   const ranked = [...FIGHTERS]
-    .filter((f) => f.discipline === discipline || f.disciplines?.includes(discipline))
+    .filter((f) => f.discipline === discipline)
     .sort((a, b) => b.elo - a.elo);
 
   // Fallback: show all fighters sorted by ELO if none match
